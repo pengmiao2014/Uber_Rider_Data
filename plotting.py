@@ -30,10 +30,7 @@ def run_profit_curve(model, costbenefit, X_train, X_test, y_train, y_test):
 
 def plot_profit_model(model, costbenefit, X_train, X_test, y_train, y_test):
     percentages = np.linspace(0, 100, len(y_test))
-    thresholds, profits = run_profit_curve(model,
-                                           costbenefit,
-                                           X_train, X_test,
-                                           y_train, y_test)
+    thresholds, profits = run_profit_curve(model,costbenefit,X_train, X_test, y_train, y_test)
     plt.plot(percentages, profits, label=model.__class__.__name__)
     plt.title("Profit Curve")
     plt.xlabel("Percentage of test instances (decreasing by score)")
