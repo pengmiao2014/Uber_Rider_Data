@@ -43,9 +43,7 @@ def find_best_threshold(model, costbenefit, X_train, X_test, y_train, y_test):
     max_threshold = None
     max_profit = None
 
-    thresholds, profits = run_profit_curve(model, costbenefit,
-                                           X_train, X_test,
-                                           y_train, y_test)
+    thresholds, profits = run_profit_curve(model, costbenefit,X_train, X_test,y_train, y_test)
     max_index = np.argmax(profits)
     if profits[max_index] > max_profit:
         max_threshold = thresholds[max_index]
